@@ -1,3 +1,0 @@
-/Users/arjunjain/Desktop/Career/CS_Portfolio/market_data_streamer/build/CMakeFiles/server.dir
-/Users/arjunjain/Desktop/Career/CS_Portfolio/market_data_streamer/build/CMakeFiles/edit_cache.dir
-/Users/arjunjain/Desktop/Career/CS_Portfolio/market_data_streamer/build/CMakeFiles/rebuild_cache.dir
