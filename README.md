@@ -106,4 +106,4 @@ market_data_streamer/
 
 ## Additional Notes
 - All numeric data is double-precision and timestamped in milliseconds. 
-- This pipeline is designed to extend into persistent buffers, analytics, or HFT simulation modules
+- This pipeline is designed to extend into persistent buffers, analytics, or HFT simulation modules. 
