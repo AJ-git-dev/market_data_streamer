@@ -4,7 +4,7 @@
 
 
 ## Overview
-The system simulates an HFT-relevant, real-time market data pipeline. It captures live BTCUSDT trades from Binance’s WebSocket API, parses and streams the data to a gRPC-based C++20 server which stores, timestamps, and computes a rolling moving average over the last n price ticks. The system demonstrates low-latency communication, stateless streaming, and clean message relay architecture, in the image of a production-grade trading ingestion service.
+This system simulates an HFT-relevant, real-time market data pipeline. It captures live BTCUSDT trades from Binance’s WebSocket API, parses and streams the data to a gRPC-based C++20 server which stores, timestamps, and computes a rolling moving average over the last n price ticks. The system demonstrates low-latency communication, stateless streaming, and clean message relay architecture, in the image of a production-grade trading ingestion service.
 
 Designed for extensibility into latency benchmarking, order book construction, and market replay simulation, this pipeline enables modular testing for tick-level quantitative analytics using structured communication across languages.
 
