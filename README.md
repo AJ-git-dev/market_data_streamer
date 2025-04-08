@@ -1,6 +1,7 @@
 # Real-Time gRPC Market Data Relay
 
-Demo: [market_data_streamer_demo.mov]
+Demo: 
+[<video controls src="https://github.com/AJ-git-dev/market_data_streamer/blob/main/market_data_streamer_demo.mov" title="market_data_streamer_demo.mov"></video>]
 
 ## Overview
 The system simulates an HFT-relevant, real-time market data pipeline. It captures live BTCUSDT trades from Binance’s WebSocket API, parses and streams the data to a gRPC-based C++20 server which stores, timestamps, and computes a rolling moving average over the last n price ticks. The system demonstrates low-latency communication, stateless streaming, and clean message relay architecture, in the image of a production-grade trading ingestion service.
