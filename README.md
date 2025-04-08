@@ -31,6 +31,7 @@ message PriceUpdate {
   double price = 2;
   int64 timestamp = 3;
 }
+```
 
 ## Build Instructions
 
