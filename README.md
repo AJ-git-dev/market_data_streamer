@@ -42,51 +42,51 @@ This project is built with CMake and requires:
 
 ### 1. Generate gRPC Bindings
 Generate C++ bindings
-<pre> ```
+```
 protoc -I=proto \
   --cpp_out=proto \
   --grpc_out=proto \
   --plugin=protoc-gen-grpc=$(which grpc_cpp_plugin) \
   proto/market_data.proto
-``` </pre>
+```
 
 Generate Python bindings
-<pre> ``` bash
+``` bash
 python3 -m grpc_tools.protoc \
   -I=proto \
   --python_out=python_grpc \
   --grpc_python_out=python_grpc \
   proto/market_data.proto
-``` </pre>
+```
 
 
 ### 2. Build C++ Server
-<pre> ``` bash
+``` bash
 rm -rf build
 cmake -B build -S .
 cmake --build buil
-``` </pre>
+```
 
 ## Run Instructions
 
 ### Teminal 1 – Launch the gRPC Server
-<pre> ``` bash ./build/server ``` </pre>
+``` bash ./build/server ```
 
 ### Teminal 2 Start Binance WebSocket + gRPC Client
-<pre> ``` bash 
+``` bash 
 cd python_grpc
 python3 binance_ws_client.py
-``` </pre>
+```
 
 ## Output example
 - MA (n) denotes the moving average of the last n ticks. 
-<pre> ``` javascript
+``` javascript
 [gRPC Receive] Symbol: BTCUSDT | Price: $77712.62 | Timestamp: 1744135122050
 MA (20): $77709.18
-``` </pre>
+```
 
 ## Folder Structure
-<pre> ``` pgsql
+``` pgsql
 .
 ├── CMakeLists.txt
 ├── proto/
@@ -101,7 +101,7 @@ MA (20): $77709.18
 │   ├── binance_ws_client.py
 │   ├── market_data_pb2.py
 │   ├── market_data_pb2_grpc.py
-``` </pre>
+```
 
 ## Additional Notes
 - All numeri data is double-precision and timestamped in milliseconds. 
