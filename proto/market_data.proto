@@ -1,0 +1,30 @@
+// proto/market_data.proto
+//
+// Market Data Streaming API using gRPC.
+// This defines the service and messages used for subscribing to real-time prices,
+// and for submitting external price ticks (e.g., from a WebSocket feed).
+
+syntax = "proto3";
+
+package marketdata;
+
+import "google/protobuf/empty.proto";  // Required for Empty return messages.
+
+service MarketDataStreamer {
+  // Client subscribes to real-time prices.
+  rpc StreamPrices (PriceRequest) returns (stream PriceUpdate);
+
+  // External source (e.g., Python WebSocket) pushes price updates.
+  rpc SendPrice (PriceUpdate) returns (google.protobuf.Empty);
+}
+
+message PriceRequest {
+  // List of symbols to subscribe to.
+  repeated string symbols = 1;
+}
+
+message PriceUpdate {
+  string symbol = 1;    // e.g., BTCUSDT
+  double price = 2;     // Latest trade price
+  int64 timestamp = 3;  // UNIX timestamp in milliseconds
+}
