@@ -37,7 +37,7 @@ message PriceUpdate {
 
 This project is built with CMake and requires: 
 - C++20-compatible compiler (e.g., AppleClang 15+ or g++)
-- gRPC and Protocol BUffers (installed via Homebrew or otherwise)
+- gRPC and Protocol Buffers (installed via Homebrew or otherwise)
 - Python 3.10+ with `websockets`, `grpcio`, and `grpcio-tools`
 
 ### 1. Generate gRPC Bindings
@@ -64,22 +64,24 @@ python3 -m grpc_tools.protoc \
 ``` bash
 rm -rf build
 cmake -B build -S .
-cmake --build buil
+cmake --build build
 ```
 
 ## Run Instructions
 
 ### Teminal 1 – Launch the gRPC Server
-``` bash ./build/server ```
+``` bash 
+./build/server 
+```
 
-### Teminal 2 Start Binance WebSocket + gRPC Client
+### Teminal 2 – Start Binance WebSocket + gRPC Client
 ``` bash 
 cd python_grpc
 python3 binance_ws_client.py
 ```
 
 ## Output example
-- MA (n) denotes the moving average of the last n ticks. 
+- *MA (n)* denotes the moving average of the last n ticks. 
 ``` javascript
 [gRPC Receive] Symbol: BTCUSDT | Price: $77712.62 | Timestamp: 1744135122050
 MA (20): $77709.18
@@ -87,7 +89,7 @@ MA (20): $77709.18
 
 ## Folder Structure
 ``` pgsql
-.
+market_data_streamer/
 ├── CMakeLists.txt
 ├── proto/
 │   ├── market_data.proto
@@ -96,13 +98,12 @@ MA (20): $77709.18
 │   ├── market_data.grpc.pb.cc
 │   ├── market_data.grpc.pb.h
 ├── server/
-│   └── server.cpp
-├── python_grpc/
-│   ├── binance_ws_client.py
-│   ├── market_data_pb2.py
-│   ├── market_data_pb2_grpc.py
+│   └── server.cpp 
+├── binance_ws_client.py
+├── market_data_pb2.py
+├── market_data_pb2_grpc.py
 ```
 
 ## Additional Notes
-- All numeri data is double-precision and timestamped in milliseconds. 
-- This pipeline is designed to extend into persistent buffers, analyics, or HFT simulation modules
+- All numeric data is double-precision and timestamped in milliseconds. 
+- This pipeline is designed to extend into persistent buffers, analytics, or HFT simulation modules
