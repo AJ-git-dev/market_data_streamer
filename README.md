@@ -8,12 +8,16 @@ This system simulates an HFT-relevant, real-time market data pipeline. It captur
 
 Designed for extensibility into latency benchmarking, order book construction, and market replay simulation, this pipeline enables modular testing for tick-level quantitative analytics using structured communication across languages.
 
+---
+
 ## Tech Stack: 
 - Frontend/Ingestion: Python 3.10+, ```websockets```, ```grpcio```, ```grcpio-tools```
 - Streaming Protocols: WebSocket (Binance.US real-time feed), gRPC (bi-directional RPC communication)
 - Backend/Analytics: C++20 with gRPC core APIs, ```protobuf```, moving average computation with double-buffered deques and mutex-guarded multithreading
 - Interprocess Communication: Protocol Buffers over gRPC
 - Deployment Notes: TLS-ready architecture, built for real-time system extension, live logging, and message queue integrations
+
+---
 
 ## Protocol Buffers Definition
 
@@ -35,6 +39,8 @@ message PriceUpdate {
   int64 timestamp = 3;
 }
 ```
+
+---
 
 ## Build Instructions
 
@@ -70,6 +76,8 @@ cmake -B build -S .
 cmake --build build
 ```
 
+---
+
 ## Run Instructions
 
 ### Teminal 1 – Launch the gRPC Server
@@ -83,12 +91,16 @@ cd python_grpc
 python3 binance_ws_client.py
 ```
 
+---
+
 ## Output example
 - *MA(n)* denotes the moving average of the last n ticks. 
 ``` javascript
 [gRPC Receive] Symbol: BTCUSDT | Price: $77712.62 | Timestamp: 1744135122050
 MA (20): $77709.18
 ```
+
+---
 
 ## Folder Structure
 ``` pgsql
@@ -106,6 +118,8 @@ market_data_streamer/
 ├── market_data_pb2.py
 ├── market_data_pb2_grpc.py
 ```
+
+---
 
 ## Additional Notes
 - All numeric data is double-precision and timestamped in milliseconds. 
