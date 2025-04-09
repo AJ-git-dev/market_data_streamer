@@ -93,8 +93,9 @@ cmake --build build
 
 ---
 
-## Output example
-- *MA(n)* denotes the moving average of the last n ticks. 
+## Sample Output
+- The ```Figures``` directory contains examples of output. 
+- A single tick output in the console is of the form (where *MA(n)* denotes the moving average of the last n ticks): 
 ``` javascript
 [gRPC Receive] Symbol: BTCUSDT | Price: $77712.62 | MA(20): $77709.18 | Timestamp: 1744135122050
 ```
