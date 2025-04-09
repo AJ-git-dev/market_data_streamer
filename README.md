@@ -1,6 +1,6 @@
 # Real-Time gRPC Market Data Relay
 
-[Demo video](https://github.com/AJ-git-dev/market_data_streamer/blob/main/market_data_streamer_demo.mov)
+[Demo video](Figures/market_data_streamer_demo.mov)
 
 [Demo figure](Figures/market_data_streamer_demo_figure.png)
 
