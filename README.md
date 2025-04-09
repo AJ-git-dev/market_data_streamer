@@ -87,8 +87,7 @@ cmake --build build
 
 ### Teminal 2 – Start Binance WebSocket + gRPC Client
 ``` bash 
-cd python_grpc
-python3 binance_ws_client.py
+./build/binance_ws_client.py
 ```
 
 ---
@@ -96,8 +95,7 @@ python3 binance_ws_client.py
 ## Output example
 - *MA(n)* denotes the moving average of the last n ticks. 
 ``` javascript
-[gRPC Receive] Symbol: BTCUSDT | Price: $77712.62 | Timestamp: 1744135122050
-MA (20): $77709.18
+[gRPC Receive] Symbol: BTCUSDT | Price: $77712.62 | MA(20): $77709.18 | Timestamp: 1744135122050
 ```
 
 ---
