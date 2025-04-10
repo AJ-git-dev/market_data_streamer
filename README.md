@@ -94,7 +94,8 @@ cmake --build build
 ---
 
 ## Sample Output
-- The ```Figures``` directory contains examples of output. 
+- The ```Figures``` directory contains examples of output.
+- All numeric data is double-precision and timestamped in milliseconds.
 - A single tick output in the console is of the form (where *MA(n)* denotes the moving average of the last n ticks): 
 ``` javascript
 [gRPC Receive] Symbol: BTCUSDT | Price: $77712.62 | MA(20): $77709.18 | Timestamp: 1744135122050
@@ -121,6 +122,5 @@ market_data_streamer/
 
 ---
 
-## Additional Notes
-- All numeric data is double-precision and timestamped in milliseconds. 
+## Future Work
 - This pipeline is designed to extend into persistent buffers, analytics, or HFT simulation modules. 
